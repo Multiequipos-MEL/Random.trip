@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <title>Random.trip — Costa Rica</title>
 
     <!-- CAMBIO: defer agregado para no bloquear el renderizado inicial -->
@@ -278,100 +278,142 @@
         .btn-gps svg, .btn-primario svg { width: 20px; height: 20px; flex-shrink: 0; }
 
         @media (max-width: 540px) {
-            /* Layout */
-            body { padding: 0; align-items: stretch; }
-            .app-container { border-radius: 0; min-height: 100vh; max-width: 100%; border-left: none; border-right: none; }
+            /* ── LAYOUT: full screen, sin márgenes ── */
+            html, body { height: 100%; }
+            body { padding: 0; align-items: stretch; font-size: 18px; }
+            .app-container {
+                border-radius: 0;
+                min-height: 100dvh;
+                width: 100%;
+                max-width: 100%;
+                border: none;
+                box-shadow: none;
+            }
 
-            /* Header */
-            .logo-section { padding: 28px 24px 24px; }
-            .logo-text { font-size: 28px; }
-            .logo-sub { font-size: 11px; letter-spacing: 3px; }
+            /* ── HEADER ── */
+            .logo-section { padding: 32px 28px 26px; }
+            .logo-text { font-size: 34px; letter-spacing: -0.5px; }
+            .logo-sub { font-size: 13px; letter-spacing: 3.5px; margin-top: 6px; }
 
-            /* Steps content */
-            .pantalla { padding: 28px 24px 20px; }
-            .step-indicator { font-size: 12px; letter-spacing: 2.5px; margin-bottom: 10px; }
-            h1 { font-size: 24px; margin-bottom: 20px; }
-            .subtitulo { font-size: 16px; margin-bottom: 20px; }
+            /* ── PANTALLAS (pasos) ── */
+            .pantalla { padding: 32px 24px 24px; }
+            .step-indicator { font-size: 14px; letter-spacing: 2.5px; margin-bottom: 12px; }
+            h1 { font-size: 28px; margin-bottom: 24px; line-height: 1.25; }
+            .subtitulo { font-size: 18px; margin-bottom: 24px; line-height: 1.5; }
+            .divider { font-size: 15px; margin: 22px 0; }
 
-            /* Category & transport grids */
-            .categorias-grid, .transporte-grid { gap: 12px; margin-bottom: 22px; }
-            .cat-btn, .trans-btn { padding: 18px 10px 14px; font-size: 14px; border-radius: 16px; gap: 10px; }
-            .cat-icon { width: 40px; height: 40px; border-radius: 10px; }
-            .cat-icon svg { width: 22px; height: 22px; }
-            .trans-icon { width: 44px; height: 44px; border-radius: 12px; }
-            .trans-icon svg { width: 24px; height: 24px; }
+            /* ── GRIDS DE CATEGORÍA / TRANSPORTE ── */
+            .categorias-grid, .transporte-grid { gap: 14px; margin-bottom: 26px; }
+            .cat-btn, .trans-btn {
+                padding: 22px 10px 18px;
+                font-size: 15px;
+                font-weight: 700;
+                border-radius: 18px;
+                gap: 12px;
+                min-height: 100px;
+            }
+            .cat-icon { width: 48px; height: 48px; border-radius: 13px; }
+            .cat-icon svg { width: 26px; height: 26px; }
+            .trans-icon { width: 52px; height: 52px; border-radius: 14px; }
+            .trans-icon svg { width: 28px; height: 28px; }
 
-            /* Buttons */
-            .btn-gps, .btn-primario { padding: 18px; font-size: 17px; border-radius: 16px; gap: 10px; }
-            .btn-gps svg, .btn-primario svg { width: 22px; height: 22px; }
-            .btn-secundario { padding: 18px; font-size: 17px; border-radius: 16px; }
-            .btn-back { padding: 20px; font-size: 16px; }
-            .btn-aleatorio { gap: 10px; padding: 18px; font-size: 17px; }
+            /* ── BOTONES PRINCIPALES ── */
+            .btn-gps, .btn-primario {
+                padding: 20px 24px;
+                font-size: 19px;
+                border-radius: 18px;
+                gap: 12px;
+                min-height: 64px;
+            }
+            .btn-gps svg, .btn-primario svg { width: 24px; height: 24px; }
+            .btn-secundario {
+                padding: 20px 24px;
+                font-size: 19px;
+                border-radius: 18px;
+                min-height: 64px;
+            }
+            .btn-back { padding: 22px; font-size: 17px; }
+            .btn-aleatorio { padding: 20px 24px; font-size: 19px; gap: 12px; min-height: 64px; }
 
-            /* Selects & inputs */
-            .manual-select { padding: 16px 42px 16px 18px; font-size: 16px; border-radius: 14px; margin-bottom: 14px; }
-            #status-msg { font-size: 14px; }
+            /* ── SELECTS ── */
+            .manual-select {
+                padding: 18px 48px 18px 20px;
+                font-size: 18px;
+                border-radius: 16px;
+                margin-bottom: 16px;
+            }
+            #status-msg { font-size: 16px; margin-top: 16px; }
 
-            /* Random / text box */
-            .text-box { height: 180px; }
-            .scan-text { font-size: 15px; }
-            .result-text { font-size: 22px; }
+            /* ── CAJA RANDOM ── */
+            .text-box { height: 200px; border-radius: 20px; }
+            .scan-text { font-size: 17px; letter-spacing: 1px; }
+            .result-text { font-size: 26px; }
 
-            /* Place list */
-            .lugar-card { padding: 18px 20px; border-radius: 16px; }
-            .lugar-card h3 { font-size: 17px; margin-bottom: 8px; }
-            .lugar-card-meta { font-size: 14px; }
-            .lugar-card-meta span:first-child { font-size: 12px; padding: 4px 12px; }
+            /* ── LISTA DE LUGARES ── */
+            .lugar-card { padding: 22px 24px; border-radius: 18px; margin-bottom: 4px; }
+            .lugar-card h3 { font-size: 20px; margin-bottom: 10px; }
+            .lugar-card-meta { font-size: 16px; }
+            .lugar-card-meta span:first-child { font-size: 13px; padding: 5px 14px; border-radius: 10px; }
 
-            /* Detail sheet (ficha) */
-            .ficha-badge { font-size: 12px; padding: 6px 16px; }
-            .ficha-info-row { font-size: 16px; gap: 14px; margin-bottom: 16px; }
-            .ficha-info-icon { width: 38px; height: 38px; border-radius: 10px; }
-            .ficha-info-icon svg { width: 20px; height: 20px; }
-            .ficha-actividades li { font-size: 16px; margin-bottom: 12px; }
-            .btns-navegacion { gap: 12px; margin-top: 28px; }
-            .btn-nav { padding: 16px; font-size: 16px; border-radius: 16px; }
-            .btn-nav svg { width: 20px; height: 20px; }
+            /* ── FICHA DE LUGAR ── */
+            .ficha-header { margin-bottom: 20px; }
+            .ficha-badge { font-size: 13px; padding: 7px 18px; border-radius: 22px; margin-bottom: 14px; }
+            #ficha-nombre { font-size: 28px !important; font-weight: 900; line-height: 1.2; }
+            .ficha-info-row { font-size: 18px; gap: 16px; margin-bottom: 18px; }
+            .ficha-info-icon { width: 44px; height: 44px; border-radius: 12px; flex-shrink: 0; }
+            .ficha-info-icon svg { width: 22px; height: 22px; }
+            .ficha-actividades h4 { font-size: 13px; letter-spacing: 2.5px; margin-bottom: 14px; }
+            .ficha-actividades li { font-size: 18px; margin-bottom: 14px; padding-left: 24px; }
+            .ficha-actividades li::before { width: 10px; height: 10px; top: 8px; }
+            .btns-navegacion { gap: 14px; margin-top: 30px; margin-bottom: 8px; }
+            .btn-nav { padding: 20px 16px; font-size: 18px; border-radius: 18px; gap: 10px; min-height: 64px; }
+            .btn-nav svg { width: 22px; height: 22px; }
 
-            /* GPS error */
-            .gps-error-box { font-size: 14px; padding: 16px 18px; }
-            .gps-error-title { font-size: 14px; }
-            .gps-error-detail { font-size: 13px; }
-            .gps-fix-steps { font-size: 12px; }
-            .gps-retry-btn { font-size: 14px; padding: 10px 18px; }
+            /* ── GPS ERRORS ── */
+            .gps-error-box { font-size: 15px; padding: 18px 20px; }
+            .gps-error-title { font-size: 16px; gap: 8px; }
+            .gps-error-detail { font-size: 14px; }
+            .gps-fix-steps { font-size: 13px; line-height: 1.8; }
+            .gps-retry-btn { font-size: 15px; padding: 12px 20px; border-radius: 10px; }
 
-            /* Language screen */
-            .lang-logo { font-size: 40px; margin-bottom: 40px; }
-            .lang-title { font-size: 22px; }
-            .lang-subtitle { font-size: 15px; margin-bottom: 44px; }
-            .lang-options { gap: 16px; }
-            .lang-card { width: calc(50% - 8px); padding: 32px 16px 26px; border-radius: 20px; }
-            .lang-card-name { font-size: 20px; }
-            .lang-card-icon { width: 56px; height: 56px; border-radius: 16px; margin-bottom: 20px; }
-            .lang-card-icon svg { width: 26px; height: 26px; }
+            /* ── PANTALLA DE IDIOMA ── */
+            .lang-content { padding: 0 24px; }
+            .lang-logo { font-size: 48px; letter-spacing: -2px; margin-bottom: 48px; }
+            .lang-title { font-size: 26px; margin-bottom: 10px; }
+            .lang-subtitle { font-size: 17px; margin-bottom: 52px; }
+            .lang-options { gap: 18px; flex-wrap: nowrap; }
+            .lang-card {
+                width: calc(50% - 9px);
+                padding: 36px 18px 30px;
+                border-radius: 24px;
+            }
+            .lang-card-name { font-size: 22px; font-weight: 800; }
+            .lang-card-icon { width: 64px; height: 64px; border-radius: 18px; margin-bottom: 24px; }
+            .lang-card-icon svg { width: 30px; height: 30px; }
+            .lang-footer { font-size: 12px; }
 
-            /* Splash */
-            .splash-logo { font-size: 42px; }
-            .splash-tagline { font-size: 17px; margin-bottom: 36px; }
+            /* ── SPLASH ── */
+            .splash-logo { font-size: 48px; }
+            .splash-tagline { font-size: 19px; margin-bottom: 40px; line-height: 1.5; }
+            .splash-loader span { width: 10px; height: 10px; }
 
-            /* Onboarding */
-            .onb-slide { padding: 36px 28px 0; }
-            .onb-slide h2 { font-size: 24px; margin-bottom: 16px; }
-            .onb-slide p { font-size: 16px; }
-            .onb-icon-wrap { width: 88px; height: 88px; border-radius: 24px; margin-bottom: 32px; }
-            .onb-icon-wrap svg { width: 40px; height: 40px; }
-            .onb-steps { gap: 18px; margin-top: 28px; }
-            .onb-step-num { width: 30px; height: 30px; font-size: 13px; }
-            .onb-step-text { font-size: 15px; }
-            .onb-step-text strong { font-size: 15px; }
-            .onboarding-footer { padding: 20px 28px 40px; gap: 22px; }
-            .onb-btn { padding: 18px; font-size: 17px; border-radius: 16px; max-width: 100%; }
-            .onb-skip { font-size: 15px; }
-            .onb-dot { width: 9px; height: 9px; }
-            .onb-dot.active { width: 30px; }
-
-            /* Divider */
-            .divider { font-size: 14px; margin: 20px 0; }
+            /* ── ONBOARDING ── */
+            .onb-slide { padding: 40px 28px 0; }
+            .onb-slide h2 { font-size: 27px; margin-bottom: 18px; line-height: 1.3; }
+            .onb-slide p { font-size: 18px; line-height: 1.7; }
+            .onb-icon-wrap { width: 96px; height: 96px; border-radius: 26px; margin-bottom: 36px; }
+            .onb-icon-wrap svg { width: 46px; height: 46px; }
+            .onb-steps { gap: 22px; margin-top: 32px; max-width: 100%; }
+            .onb-step-item { gap: 16px; }
+            .onb-step-num { width: 34px; height: 34px; font-size: 14px; flex-shrink: 0; }
+            .onb-step-text { font-size: 17px; line-height: 1.55; }
+            .onb-step-text strong { font-size: 17px; }
+            .onboarding-footer { padding: 24px 28px 44px; gap: 24px; }
+            .onb-btn { padding: 20px; font-size: 19px; border-radius: 18px; max-width: 100%; }
+            .onb-skip { font-size: 16px; padding: 6px 12px; }
+            .onb-dot { width: 10px; height: 10px; }
+            .onb-dot.active { width: 32px; }
+            .onb-dots { gap: 10px; }
         }
         @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; } }
     </style>
