@@ -761,19 +761,8 @@
             }
             document.getElementById('btn-maps').href = mapsUrl;
 
-            // ── WAZE (CORREGIDO) ──────────────────────────────────────────
-            // Waze toma el origen automáticamente del GPS del dispositivo.
-            // Solo se pasa el destino. Si el lugar tiene coordenadas exactas
-            // se usan directamente (más preciso); si no, se usa búsqueda por nombre.
-            var wazeUrl;
-            if (l.lat && l.lng) {
-                // Destino por coordenadas precisas + zoom 17 para pin exacto
-                wazeUrl = 'https://waze.com/ul?ll=' + l.lat + ',' + l.lng + '&navigate=yes&zoom=17';
-            } else {
-                // Fallback: búsqueda por nombre
-                var wazeDest = encodeURIComponent(nombreLugar + ', Costa Rica');
-                wazeUrl = 'https://waze.com/ul?q=' + wazeDest + '&navigate=yes';
-            }
+            var wazeDest = encodeURIComponent(nombreLugar + ', ' + l.canton + ', Costa Rica');
+            var wazeUrl = 'https://waze.com/ul?q=' + wazeDest + '&navigate=yes';
             // ─────────────────────────────────────────────────────────────
             document.getElementById('btn-waze').href = wazeUrl;
 
