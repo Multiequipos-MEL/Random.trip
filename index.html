@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <title>Random.trip — Costa Rica</title>
 
-    <!-- CAMBIO: defer agregado para no bloquear el renderizado inicial -->
     <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js" defer></script>
     <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js" defer></script>
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
@@ -278,7 +277,6 @@
         .btn-gps svg, .btn-primario svg { width: 20px; height: 20px; flex-shrink: 0; }
 
         @media (max-width: 540px) {
-            /* ── LAYOUT: full screen, sin márgenes ── */
             html, body { height: 100%; }
             body { padding: 0; align-items: stretch; font-size: 18px; }
             .app-container {
@@ -295,20 +293,14 @@
                 -webkit-overflow-scrolling: touch;
                 padding-bottom: 40px !important;
             }
-
-            /* ── HEADER ── */
             .logo-section { padding: 32px 28px 26px; }
             .logo-text { font-size: 34px; letter-spacing: -0.5px; }
             .logo-sub { font-size: 13px; letter-spacing: 3.5px; margin-top: 6px; }
-
-            /* ── PANTALLAS (pasos) ── */
             .pantalla { padding: 32px 24px 24px; }
             .step-indicator { font-size: 14px; letter-spacing: 2.5px; margin-bottom: 12px; }
             h1 { font-size: 28px; margin-bottom: 24px; line-height: 1.25; }
             .subtitulo { font-size: 18px; margin-bottom: 24px; line-height: 1.5; }
             .divider { font-size: 15px; margin: 22px 0; }
-
-            /* ── GRIDS DE CATEGORÍA / TRANSPORTE ── */
             .categorias-grid, .transporte-grid { gap: 14px; margin-bottom: 26px; }
             .cat-btn, .trans-btn {
                 padding: 22px 10px 18px;
@@ -322,8 +314,6 @@
             .cat-icon svg { width: 26px; height: 26px; }
             .trans-icon { width: 52px; height: 52px; border-radius: 14px; }
             .trans-icon svg { width: 28px; height: 28px; }
-
-            /* ── BOTONES PRINCIPALES ── */
             .btn-gps, .btn-primario {
                 padding: 20px 24px;
                 font-size: 19px;
@@ -340,8 +330,6 @@
             }
             .btn-back { padding: 22px; font-size: 17px; }
             .btn-aleatorio { padding: 20px 24px; font-size: 19px; gap: 12px; min-height: 64px; }
-
-            /* ── SELECTS ── */
             .manual-select {
                 padding: 18px 48px 18px 20px;
                 font-size: 18px;
@@ -349,19 +337,13 @@
                 margin-bottom: 16px;
             }
             #status-msg { font-size: 16px; margin-top: 16px; }
-
-            /* ── CAJA RANDOM ── */
             .text-box { height: 200px; border-radius: 20px; }
             .scan-text { font-size: 17px; letter-spacing: 1px; }
             .result-text { font-size: 26px; }
-
-            /* ── LISTA DE LUGARES ── */
             .lugar-card { padding: 22px 24px; border-radius: 18px; margin-bottom: 4px; }
             .lugar-card h3 { font-size: 20px; margin-bottom: 10px; }
             .lugar-card-meta { font-size: 16px; }
             .lugar-card-meta span:first-child { font-size: 13px; padding: 5px 14px; border-radius: 10px; }
-
-            /* ── FICHA DE LUGAR ── */
             .ficha-header { margin-bottom: 20px; }
             .ficha-badge { font-size: 13px; padding: 7px 18px; border-radius: 22px; margin-bottom: 14px; }
             #ficha-nombre { font-size: 28px !important; font-weight: 900; line-height: 1.2; }
@@ -374,15 +356,11 @@
             .btns-navegacion { gap: 14px; margin-top: 30px; margin-bottom: 8px; }
             .btn-nav { padding: 20px 16px; font-size: 18px; border-radius: 18px; gap: 10px; min-height: 64px; }
             .btn-nav svg { width: 22px; height: 22px; }
-
-            /* ── GPS ERRORS ── */
             .gps-error-box { font-size: 15px; padding: 18px 20px; }
             .gps-error-title { font-size: 16px; gap: 8px; }
             .gps-error-detail { font-size: 14px; }
             .gps-fix-steps { font-size: 13px; line-height: 1.8; }
             .gps-retry-btn { font-size: 15px; padding: 12px 20px; border-radius: 10px; }
-
-            /* ── PANTALLA DE IDIOMA ── */
             .lang-content { padding: 0 24px; }
             .lang-logo { font-size: 48px; letter-spacing: -2px; margin-bottom: 48px; }
             .lang-title { font-size: 26px; margin-bottom: 10px; }
@@ -397,13 +375,9 @@
             .lang-card-icon { width: 64px; height: 64px; border-radius: 18px; margin-bottom: 24px; }
             .lang-card-icon svg { width: 30px; height: 30px; }
             .lang-footer { font-size: 12px; }
-
-            /* ── SPLASH ── */
             .splash-logo { font-size: 48px; }
             .splash-tagline { font-size: 19px; margin-bottom: 40px; line-height: 1.5; }
             .splash-loader span { width: 10px; height: 10px; }
-
-            /* ── ONBOARDING ── */
             .onb-slide { padding: 40px 28px 0; }
             .onb-slide h2 { font-size: 27px; margin-bottom: 18px; line-height: 1.3; }
             .onb-slide p { font-size: 18px; line-height: 1.7; }
@@ -663,21 +637,15 @@
             appId: "1:33793158920:web:d5b61366a6e83df1e206bd"
         };
 
-        // CAMBIO: inicialización diferida para que funcione con los scripts en defer
         function initFirebase() {
             firebase.initializeApp(firebaseConfig);
             var db = firebase.firestore();
-
-            // CAMBIO: persistencia offline — los datos se guardan en el navegador
-            // y no se vuelven a descargar de Firebase si no cambiaron
             db.enablePersistence().catch(function(err) {
                 console.warn('Persistencia no disponible:', err.code);
             });
-
             window._db = db;
         }
 
-        // Espera a que los scripts de Firebase (defer) estén listos
         if (document.readyState === 'loading') {
             document.addEventListener('DOMContentLoaded', initFirebase);
         } else {
@@ -721,8 +689,6 @@
             var cc=categoriasSeleccionadas.includes('aleatorio')?todasLasCategorias:categoriasSeleccionadas;
             var af=document.getElementById('aviso-filtro');
             af.style.display='none';
-
-            // CAMBIO: .limit(500) para proteger contra colecciones muy grandes
             window._db.collection('lugares').where('categoria','in',cc).limit(500).get()
             .then(function(snap){
                 var td=[];
@@ -786,6 +752,7 @@
             var nombreLugar = getField(l, 'nombre');
             var queryDestino = encodeURIComponent(nombreLugar + ', ' + l.canton + ', ' + l.provincia + ', Costa Rica');
 
+            // Google Maps: ruta desde ubicación del usuario al destino
             var mapsUrl;
             if (userLat && userLng) {
                 mapsUrl = 'https://www.google.com/maps/dir/' + userLat + ',' + userLng + '/' + queryDestino;
@@ -794,17 +761,20 @@
             }
             document.getElementById('btn-maps').href = mapsUrl;
 
+            // ── WAZE (CORREGIDO) ──────────────────────────────────────────
+            // Waze toma el origen automáticamente del GPS del dispositivo.
+            // Solo se pasa el destino. Si el lugar tiene coordenadas exactas
+            // se usan directamente (más preciso); si no, se usa búsqueda por nombre.
             var wazeUrl;
             if (l.lat && l.lng) {
-                if (userLat && userLng) {
-                    wazeUrl = 'https://waze.com/ul?ll=' + l.lat + '%2C' + l.lng + '&navigate=yes&from=lat:' + userLat + '%2Clon:' + userLng;
-                } else {
-                    wazeUrl = 'https://waze.com/ul?ll=' + l.lat + '%2C' + l.lng + '&navigate=yes';
-                }
+                // Destino por coordenadas precisas + zoom 17 para pin exacto
+                wazeUrl = 'https://waze.com/ul?ll=' + l.lat + ',' + l.lng + '&navigate=yes&zoom=17';
             } else {
-                var wazeDest = encodeURIComponent(nombreLugar + ', ' + l.provincia + ', Costa Rica');
+                // Fallback: búsqueda por nombre
+                var wazeDest = encodeURIComponent(nombreLugar + ', Costa Rica');
                 wazeUrl = 'https://waze.com/ul?q=' + wazeDest + '&navigate=yes';
             }
+            // ─────────────────────────────────────────────────────────────
             document.getElementById('btn-waze').href = wazeUrl;
 
             mostrarPaso(5);
